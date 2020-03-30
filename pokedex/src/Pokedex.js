@@ -58,6 +58,7 @@ class Pokedex extends Component {
   render() {
     return (
       <div>
+        <h2>Pokedex</h2>
         {this.props.pokemon.map(p => (
           <Pokecard {...p} key={p.id} />
         ))}
