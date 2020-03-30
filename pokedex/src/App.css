@@ -1,38 +1,43 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  letter-spacing: 1.7;
+}
+
 .App {
+  margin: 2rem 10rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  margin-bottom: 7rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right bottom, rgb(35, 35, 255), rgb(6, 68, 88));
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  font-size: 5rem;
+  font-weight: 700;
+  transition: all .2s;
+  margin-left: auto;
+  backface-visibility: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App h1:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: .5rem 1rem 2rem rgba(#000000, .2);
 }

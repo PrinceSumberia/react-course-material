@@ -1,0 +1,26 @@
+.Pokecard {
+  /* background-color: blue; */
+  background-image: linear-gradient(to right bottom, rgb(35, 35, 255), rgb(6, 68, 88));
+  padding: 3.5rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 .5rem 3.5rem rgba(0, 0, 0, .5);
+  transition: all .5s;
+}
+
+.Pokecard h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.Pokecard p {
+  text-transform: capitalize;
+}
+
+
+.Pokecard:hover {
+  transform: scale(1.05);
+}

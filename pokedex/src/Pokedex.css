@@ -1,0 +1,6 @@
+.Pokedex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6rem;
+  color: white;
+}

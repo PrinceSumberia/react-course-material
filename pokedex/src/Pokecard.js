@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Pokecard.css";
 
 export default class Pokecard extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class Pokecard extends Component {
     console.log(updatedId);
     const img = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${updatedId}.png`;
     return (
-      <div>
+      <div className="Pokecard">
         <h3>{name}</h3>
         <img src={img} alt={name} />
         <p>{type}</p>

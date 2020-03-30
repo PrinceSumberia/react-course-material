@@ -4,7 +4,8 @@ import Pokedex from "./Pokedex";
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <h1>Pokedex</h1>
       <Pokedex />
     </div>
   );
