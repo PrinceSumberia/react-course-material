@@ -1,3 +1,8 @@
 .Die i {
   font-size: 7rem;
 }
+
+.rolling {
+  color: blue;
+  /* font-size: 10rem; */
+}
