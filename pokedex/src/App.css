@@ -3,7 +3,7 @@
   text-align: center;
 }
 
-.App h1 {
+.App-heading {
   margin-bottom: 7rem;
   text-transform: uppercase;
   background-image: linear-gradient(to right bottom, rgb(35, 35, 255), rgb(6, 68, 88));

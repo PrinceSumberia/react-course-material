@@ -1,7 +1,56 @@
 .Pokedex {
+  margin-bottom: 8rem;
+}
+
+.Pokedex-pokemon {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 6rem;
   grid-row-gap: 8rem;
   color: white;
+  /* margin-bottom: 8rem; */
+}
+
+.Pokedex h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  transition: all .3s;
+}
+
+.Pokedex h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+.Pokedex-winner {
+  background-image: linear-gradient(to right, rgb(60, 255, 0), rgba(33, 139, 0, 0.986));
+  background-clip: text;
+  color: transparent
+}
+
+.Pokedex-loser {
+  background-image: linear-gradient(to right, rgb(255, 2, 2), rgba(255, 0, 0, 0.514));
+  background-clip: text;
+  color: transparent
+}
+
+.Pokedex-winnerdeck {
+  animation: Pulsate 1s infinite;
+}
+
+@keyframes Pulsate {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

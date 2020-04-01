@@ -9,12 +9,14 @@
   border-radius: 15px;
   box-shadow: 0 .5rem 3.5rem rgba(0, 0, 0, .5);
   transition: all .5s;
+  /* margin-bottom: 8rem; */
 }
 
 .Pokecard h3 {
   text-transform: uppercase;
   font-weight: 600;
 }
+
 
 .Pokecard p {
   text-transform: capitalize;
