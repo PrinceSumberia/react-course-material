@@ -1,1 +1,12 @@
-.RollDice {}
+.RollDice-btn {
+  border: none;
+  font-size: inherit;
+  padding: 1rem 2.5rem;
+  margin-top: 2rem;
+  background-color: black;
+  color: white;
+}
+
+.RollDice-btn-active {
+  background-color: blue;
+}

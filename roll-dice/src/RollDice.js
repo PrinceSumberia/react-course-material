@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Die from "./Die";
+import "./RollDice.css";
 
 export default class RollDice extends Component {
   static defaultProps = {
@@ -30,8 +31,16 @@ export default class RollDice extends Component {
       <div className="RollDice">
         <Die number={this.state.randNumOne} isRolling={this.state.isRolling} />
         <Die number={this.state.randNumTwo} isRolling={this.state.isRolling} />
-        <button onClick={this.genRandomNumber} disabled={this.state.isRolling}>
-          Roll Dice
+        <button
+          onClick={this.genRandomNumber}
+          disabled={this.state.isRolling}
+          className={
+            this.state.isRolling
+              ? "RollDice-btn-active RollDice-btn"
+              : "RollDice-btn"
+          }
+        >
+          {this.state.isRolling ? "Rolling...." : "Roll Dice"}
         </button>
       </div>
     );

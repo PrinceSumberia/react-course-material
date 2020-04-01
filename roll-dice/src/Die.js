@@ -4,7 +4,6 @@ import "./Die.css";
 
 export default class Die extends Component {
   render() {
-    console.log(this.props.isRolling);
     let classes = classNames({
       Die,
       rolling: this.props.isRolling
