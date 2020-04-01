@@ -5,6 +5,7 @@
   margin-top: 2rem;
   background-color: black;
   color: white;
+  border-radius: 10px;
 }
 
 .RollDice-btn-active {
