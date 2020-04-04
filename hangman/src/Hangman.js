@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Hangman.css";
+import ApphaButtons from "./AphaButtons";
 import img0 from "./0.jpg";
 import img1 from "./1.jpg";
 import img2 from "./2.jpg";
@@ -54,16 +55,16 @@ class Hangman extends Component {
 
   /** generateButtons: return array of letter buttons to render */
   generateButtons() {
-    return "abcdefghijklmnopqrstuvwxyz".split("").map((ltr) => (
-      <button
-        key={ltr}
-        value={ltr}
-        onClick={this.handleGuess}
-        disabled={this.state.guessed.has(ltr)}
-      >
-        {ltr}
-      </button>
-    ));
+    return "abcdefghijklmnopqrstuvwxyz"
+      .split("")
+      .map((ltr) => (
+        <ApphaButtons
+          key={ltr}
+          value={ltr}
+          handleGuess={this.handleGuess}
+          disabled={this.state.guessed.has(ltr)}
+        />
+      ));
   }
 
   handleRestart() {
