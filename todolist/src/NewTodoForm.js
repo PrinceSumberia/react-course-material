@@ -26,7 +26,7 @@ export default class NewTodoForm extends Component {
     const { task } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" value={task} onChange={this.handleChange} />
+        <input type="text" value={task} onChange={this.handleChange} required />
         <button>Add Todo!</button>
       </form>
     );

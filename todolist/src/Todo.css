@@ -1,0 +1,7 @@
+.Todo>* {
+  display: inline-block;
+}
+
+.Todo-completed {
+  text-decoration: line-through;
+}
