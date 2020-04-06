@@ -1,7 +1,27 @@
 .Todo>* {
   display: inline-block;
+  font-size: 2rem;
+  padding: 1.5rem 3.5rem;
+}
+
+.Todo {
+  transition: all .5s ease;
+}
+
+.Todo:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .Todo-completed {
   text-decoration: line-through;
+  font-weight: 300;
+}
+
+
+
+.Todo button {
+  padding: .15rem .25rem;
+  border: none;
+  font-size: 1.25rem;
 }
