@@ -16,21 +16,28 @@ export default class Deck extends Component {
 
   async fetchCard() {
     const URL = `https://deckofcardsapi.com/api/deck/${this.state.deckId}/draw/`;
-    const response = await axios.get(URL);
-    const data = response.data;
-    const cards = data.cards[0];
-    const card = {
-      value: cards.value,
-      code: cards.code,
-      suit: cards.suit,
-      image: cards.image,
-      randomX: Math.floor(Math.random() * 30),
-      randomY: Math.floor(Math.random() * 30),
-    };
-    this.setState((st) => ({
-      cards: [...st.cards, card],
-      remaining: data.remaining,
-    }));
+    try {
+      const response = await axios.get(URL);
+      const data = response.data;
+      if (!data.success) {
+        throw new Error("No Card Remaining");
+      }
+      const cards = data.cards[0];
+      const card = {
+        value: cards.value,
+        code: cards.code,
+        suit: cards.suit,
+        image: cards.image,
+        randomX: Math.floor(Math.random() * 30),
+        randomY: Math.floor(Math.random() * 30),
+      };
+      this.setState((st) => ({
+        cards: [...st.cards, card],
+        remaining: data.remaining,
+      }));
+    } catch (err) {
+      alert(err);
+    }
   }
 
   handleClick() {
