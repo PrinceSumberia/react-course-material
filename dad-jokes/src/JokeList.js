@@ -8,12 +8,17 @@ export default class JokeList extends Component {
 
     this.state = {
       jokes: JSON.parse(window.localStorage.getItem("jokes") || "[]"),
+      loading: false,
     };
-    this.fetchJoke = this.fetchJoke.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     if (this.state.jokes.length === 0) this.fetchJoke();
+  }
+
+  handleClick() {
+    this.setState({ loading: true }, this.fetchJoke);
   }
 
   async fetchJoke() {
@@ -27,19 +32,29 @@ export default class JokeList extends Component {
         arr.push(joke);
       }
     }
-    this.setState({ jokes: arr }, () =>
+    this.setState({ jokes: arr, loading: false }, () =>
       window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
     );
   }
 
   render() {
+    if (this.state.loading) {
+      return (
+        <div className="JokeList-spinner">
+          {/* <i className="far fa-8x fa-laugh fa-spin" /> */}
+          <h1 className="JokeList-title">Loading...</h1>
+        </div>
+      );
+    }
+
     const jokes = this.state.jokes.map((joke) => (
       <Joke key={joke.id} id={joke.id} joke={joke.joke} />
     ));
+
     return (
       <div>
         <h1>The Jokes App</h1>
-        <button onClick={this.fetchJoke}>Fetch Jokes</button>
+        <button onClick={this.handleClick}>Fetch Jokes</button>
         {jokes}
       </div>
     );
