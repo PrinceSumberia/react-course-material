@@ -1,0 +1,30 @@
+.Joke {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.411);
+}
+
+.Joke button {
+  margin: 0 1rem;
+}
+
+.Joke-text {
+  flex: 1;
+  margin: 1rem;
+}
+
+.emoji {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.votes {
+  background-color: #fff;
+  box-shadow: 0 .1rem .5rem rgba(0, 0, 0, 0.26);
+  font: 1.2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  border: 1px solid green;
+}

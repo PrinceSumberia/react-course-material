@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Joke from "./Joke";
 import axios from "axios";
+import "./JokeList.css";
 
 export default class JokeList extends Component {
   constructor(props) {
@@ -80,10 +81,17 @@ export default class JokeList extends Component {
     ));
 
     return (
-      <div>
-        <h1>The Jokes App</h1>
-        <button onClick={this.handleClick}>Fetch Jokes</button>
-        {jokes}
+      <div className="JokeList">
+        <div className="JokeList-sidebar">
+          <h1>The Jokes App</h1>
+          <span role="img" aria-labelledby="img" className="Main-emoji">
+            😂
+          </span>
+          <button className="JokeList-btn" onClick={this.handleClick}>
+            Fetch Jokes
+          </button>
+        </div>
+        <div className="JokeList-jokes">{jokes}</div>
       </div>
     );
   }

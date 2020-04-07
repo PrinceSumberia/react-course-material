@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import "./Joke.css";
 
 export default class Joke extends PureComponent {
   handleClick = (evt) => {
@@ -27,17 +28,16 @@ export default class Joke extends PureComponent {
     const { joke, votes } = this.props;
 
     return (
-      <div>
-        <p>
-          <button onClick={this.handleClick} name="upvote">
-            &uarr;
-          </button>
-          <button onClick={this.handleClick} name="downvote">
-            &darr;
-          </button>
-          {joke} <span>{votes}</span>
-          <span>{this.emoji(votes)}</span>
-        </p>
+      <div className="Joke">
+        <button onClick={this.handleClick} name="upvote">
+          &uarr;
+        </button>
+        <p className="votes">{votes}</p>
+        <button onClick={this.handleClick} name="downvote">
+          &darr;
+        </button>
+        <p className="Joke-text">{joke}</p>
+        <span className="emoji">{this.emoji(votes)}</span>
       </div>
     );
   }
