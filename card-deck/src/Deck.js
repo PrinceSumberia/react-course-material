@@ -27,10 +27,10 @@ export default class Deck extends Component {
       randomX: Math.floor(Math.random() * 30),
       randomY: Math.floor(Math.random() * 30),
     };
-    this.setState({
-      cards: [...this.state.cards, card],
+    this.setState((st) => ({
+      cards: [...st.cards, card],
       remaining: data.remaining,
-    });
+    }));
   }
 
   handleClick() {
