@@ -11,6 +11,7 @@ export default class JokeList extends Component {
       loading: false,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleVotes = this.handleVotes.bind(this);
   }
 
   componentDidMount() {
@@ -29,10 +30,31 @@ export default class JokeList extends Component {
       });
       const joke = response.data;
       if (arr.every((j) => j.id !== joke.id)) {
-        arr.push(joke);
+        arr.push({ ...joke, votes: 0 });
       }
     }
     this.setState({ jokes: arr, loading: false }, () =>
+      window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
+    );
+  }
+
+  handleVotes(voteType, id) {
+    const updatedJokes = this.state.jokes.map((joke) => {
+      if (joke.id === id) {
+        if (voteType === "upvote") {
+          return { ...joke, votes: joke.votes + 1 };
+        } else if (voteType === "downvote") {
+          return { ...joke, votes: joke.votes - 1 };
+        }
+      }
+      return joke;
+    });
+
+    const sortedJokes = updatedJokes.sort(function (a, b) {
+      return b.votes - a.votes;
+    });
+
+    this.setState({ jokes: sortedJokes }, () =>
       window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
     );
   }
@@ -48,7 +70,13 @@ export default class JokeList extends Component {
     }
 
     const jokes = this.state.jokes.map((joke) => (
-      <Joke key={joke.id} id={joke.id} joke={joke.joke} />
+      <Joke
+        key={joke.id}
+        id={joke.id}
+        joke={joke.joke}
+        votes={joke.votes}
+        handleVotes={this.handleVotes}
+      />
     ));
 
     return (
