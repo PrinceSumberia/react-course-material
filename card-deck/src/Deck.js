@@ -28,8 +28,6 @@ export default class Deck extends Component {
         code: cards.code,
         suit: cards.suit,
         image: cards.image,
-        randomX: Math.floor(Math.random() * 30),
-        randomY: Math.floor(Math.random() * 30),
       };
       this.setState((st) => ({
         cards: [...st.cards, card],
@@ -53,13 +51,7 @@ export default class Deck extends Component {
 
   render() {
     const cards = this.state.cards.map((card) => (
-      <Card
-        key={card.code}
-        name={card.suit}
-        imgSrc={card.image}
-        randomX={card.randomX}
-        randomY={card.randomY}
-      />
+      <Card key={card.code} name={card.suit} imgSrc={card.image} />
     ));
 
     return (
