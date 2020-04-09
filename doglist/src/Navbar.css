@@ -1,0 +1,16 @@
+.Navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.Navbar-link {
+  color: rgba(255, 255, 255, 0.61);
+  text-decoration: none;
+}
+
+.Navbar-link-active {
+  color: white;
+}
