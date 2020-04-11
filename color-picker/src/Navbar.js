@@ -64,7 +64,11 @@ export default class Navbar extends Component {
           open={open}
           autoHideDuration={3000}
           onClose={this.handleClose}
-          message={<span id="message-id">Format Changed!</span>}
+          message={
+            <span id="message-id">
+              Format Changed to {format.toUpperCase()}
+            </span>
+          }
           ContentProps={{
             "aria-describedby": "message-id",
           }}
