@@ -4,26 +4,25 @@ import { List, Divider } from "@material-ui/core";
 import Todo from "./Todo";
 
 function TodoList({ todos, removeTodo, toggleTodo, editTodo }) {
-  return (
-    <Paper>
-      <List>
-        {todos.map((todo) => (
-          <>
-            <Todo
-              task={todo.task}
-              id={todo.id}
-              completed={todo.completed}
-              key={todo.id}
-              removeTodo={removeTodo}
-              toggleTodo={toggleTodo}
-              editTodo={editTodo}
-            />
-            <Divider />
-          </>
-        ))}
-      </List>
-    </Paper>
-  );
+  if (todos.length)
+    return (
+      <Paper>
+        <List>
+          {todos.map((todo) => (
+            <React.Fragment key={todo.id}>
+              <Todo
+                {...todo}
+                removeTodo={removeTodo}
+                toggleTodo={toggleTodo}
+                editTodo={editTodo}
+              />
+              <Divider />
+            </React.Fragment>
+          ))}
+        </List>
+      </Paper>
+    );
+  return null;
 }
 
 export default TodoList;
