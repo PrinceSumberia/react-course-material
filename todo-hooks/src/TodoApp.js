@@ -32,7 +32,7 @@ function TodoApp() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Grid container justify="center" style={{ marginTop: "1rem" }}>
+      <Grid container justify="center" style={{ marginTop: "1.5rem" }}>
         <Grid item xs={11} md={8} lg={4}>
           <TodoForm addTodo={addTodo} />
           <TodoList
