@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import {
   ListItem,
   ListItemText,
@@ -15,7 +15,7 @@ import { DispatchContext } from "./contexts/todos.context";
 function Todo({ task, completed, id }) {
   const [isEditing, toggle] = useToggleState();
   const dispatch = useContext(DispatchContext);
-
+  console.log(task);
   return (
     <ListItem>
       {isEditing ? (
@@ -47,4 +47,4 @@ function Todo({ task, completed, id }) {
   );
 }
 
-export default Todo;
+export default memo(Todo);
