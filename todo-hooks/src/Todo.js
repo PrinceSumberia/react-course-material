@@ -10,11 +10,11 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import useToggleState from "./hooks/useToggleState";
 import EditToForm from "./EditToForm";
-import { TodosContext } from "./contexts/todos.context";
+import { DispatchContext } from "./contexts/todos.context";
 
 function Todo({ task, completed, id }) {
   const [isEditing, toggle] = useToggleState();
-  const { dispatch } = useContext(TodosContext);
+  const dispatch = useContext(DispatchContext);
 
   return (
     <ListItem>
