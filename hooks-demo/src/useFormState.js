@@ -1,7 +1,7 @@
-import { useState } from "react";
+import useLocalStorageState from "./useLocalStorageState";
 
 const useFormState = (initialValues) => {
-  const [state, setState] = useState(initialValues);
+  const [state, setState] = useLocalStorageState("form", initialValues);
   const handleChange = (evt) => {
     setState({
       ...state,
